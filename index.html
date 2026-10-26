@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f7fb" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#10131b" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>Health & Performance</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="app-icon-192.png">
+  <link rel="apple-touch-icon" href="app-icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="appShell" class="app-shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">HEALTH & PERFORMANCE</div>
+        <h1 id="pageTitle">Today</h1>
+      </div>
+      <div class="topbar-actions">
+        <button id="quickAddButton" class="icon-button" aria-label="Quick add" title="Quick add">＋</button>
+        <button id="settingsButton" class="icon-button" aria-label="Settings" title="Settings">⚙</button>
+      </div>
+    </header>
+
+    <main id="app" class="app-content" aria-live="polite"></main>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <button class="nav-item active" data-view="today"><span class="nav-icon">⌂</span><span>Today</span></button>
+      <button class="nav-item" data-view="progress"><span class="nav-icon">↗</span><span>Progress</span></button>
+      <button class="nav-item" data-view="running"><span class="nav-icon">◒</span><span>Running</span></button>
+      <button class="nav-item" data-view="learn"><span class="nav-icon">◇</span><span>Learn</span></button>
+      <button class="nav-item" data-view="more"><span class="nav-icon">•••</span><span>More</span></button>
+    </nav>
+  </div>
+
+  <div id="modalRoot"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="db.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
