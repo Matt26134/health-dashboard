@@ -1,35 +1,24 @@
-# Health & Performance Dashboard V0.3.1 – Test Drive
+# Health & Performance Dashboard V0.4.0 — Coach & Habits
 
-A local-first installable PWA designed around motivation, weight loss, running performance and behaviour change.
+Local-first installable PWA for GitHub Pages. Personal health records stay in IndexedDB on the device/browser profile.
 
-## Start date
-The programme is configured to start on **Tuesday 3 November 2026**. Before that date the app stays in **Setup Mode**. The Road to Madrid countdown now correctly uses the 173-day programme window from 3 November 2026 to 25 April 2027.
+## V0.4.0 highlights
+- evidence-backed 4–5 minute lessons with source notes, knowledge checks and gated completion
+- clickable Today cards and integrity-protected Momentum actions
+- transparent Momentum and Health & Performance score breakdowns
+- daily energy, hunger, sleep, body and mood check-ins
+- weight-context tags, nutrition feel and subjective workout feel
+- configurable supplement checklist
+- tomorrow planning, win/wobble logging and weekly reflections/confidence
+- expanded badge library
+- injury-aware coaching retained
+- reversible Test Drive retained
 
-## V0.3.1 highlights
-- **Test Drive mode:** safely snapshots the entire local database, loads realistic synthetic two-week data, and can restore the exact pre-demo state with one reset.
-- **Pre-season polish:** baseline now shows pending until entered; Health & Performance is not scored before Day 1; weekly review waits for the real journey.
-- **Progress Engine:** daily weight, 7-day smoothing, prior-week comparison and straight-line Madrid trajectory are treated separately.
-- **Don't Panic coaching:** catches a daily scale increase when the underlying trend is still falling and explains why no reaction is needed.
-- **Trajectory status:** shows pounds ahead/behind the path to 190 lb without encouraging crash corrections.
-- **Current vs required pace:** compares recent smoothed loss rate with the pace required to reach Madrid.
-- **Forecast date:** once enough trend data exists, estimates when the Madrid target would be reached at the current rate.
-- **Interactive weight chart:** 30-day, 90-day, 6-month and all-time views with daily readings, 7-day trend and Madrid path.
-- **Milestone focus:** next 5-lb milestone and distance remaining are surfaced alongside 190 lb and 180 lb goals.
-- **Injury pulse check:** active injuries now offer a one-tap Better / Same / Worse daily check-in, retained in the local injury record.
-- **V0.2 injury-aware coaching retained:** running targets pause appropriately and approved alternatives/recovery still count.
+## Storage and upgrades
+Database schema is V3. The upgrade adds `checkins` and `plans` stores without clearing existing V0.3 data. Old encrypted backups remain restorable; missing newer stores restore as empty.
 
-## Architecture
-- Static HTML/CSS/JavaScript suitable for GitHub Pages.
-- Personal data stays in `HealthDashboardDB` (IndexedDB) in the local browser profile.
-- GitHub contains application code only — never personal health records or API secrets.
-- Database schema remains V2, so V0.3.1 is an application-only upgrade and preserves V0.2 data in place.
-- Encrypted `.healthdash` full backup/restore remains compatible with older backups.
-- PWA/service worker allows install and offline use.
+## Deploy
+Upload all files in this folder to the root of the existing `health-dashboard` GitHub repository. Do not change GitHub Pages settings. Then use **Settings → Check deployed version → Reload latest** in the installed app.
 
-## Planned integrations
-Garmin, Withings and Nutracheck remain represented as data sources. Manual input remains fully usable while sync/import methods are added without exposing credentials in GitHub Pages.
-
-## Deploy to GitHub Pages
-Make an encrypted backup first. Then upload the **contents** of this folder to the root of the existing `health-dashboard` repository, replacing files with the same names. Do not delete the repository or change the Pages settings.
-
-Replacing application files does **not** erase IndexedDB data. After GitHub deploys V0.3.1, use **Settings → Check deployed version → Reload latest** in the installed app.
+## Privacy
+GitHub hosts app code only. Health data stays local unless you explicitly export an encrypted `.healthdash` backup. API secrets for future Garmin/Withings integrations must never be committed to this repository.
