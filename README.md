@@ -1,11 +1,13 @@
-# Health & Performance Dashboard V0.3.0 – Progress Engine
+# Health & Performance Dashboard V0.3.1 – Test Drive
 
 A local-first installable PWA designed around motivation, weight loss, running performance and behaviour change.
 
 ## Start date
 The programme is configured to start on **Tuesday 3 November 2026**. Before that date the app stays in **Setup Mode**. The Road to Madrid countdown now correctly uses the 173-day programme window from 3 November 2026 to 25 April 2027.
 
-## V0.3 highlights
+## V0.3.1 highlights
+- **Test Drive mode:** safely snapshots the entire local database, loads realistic synthetic two-week data, and can restore the exact pre-demo state with one reset.
+- **Pre-season polish:** baseline now shows pending until entered; Health & Performance is not scored before Day 1; weekly review waits for the real journey.
 - **Progress Engine:** daily weight, 7-day smoothing, prior-week comparison and straight-line Madrid trajectory are treated separately.
 - **Don't Panic coaching:** catches a daily scale increase when the underlying trend is still falling and explains why no reaction is needed.
 - **Trajectory status:** shows pounds ahead/behind the path to 190 lb without encouraging crash corrections.
@@ -20,7 +22,7 @@ The programme is configured to start on **Tuesday 3 November 2026**. Before that
 - Static HTML/CSS/JavaScript suitable for GitHub Pages.
 - Personal data stays in `HealthDashboardDB` (IndexedDB) in the local browser profile.
 - GitHub contains application code only — never personal health records or API secrets.
-- Database schema remains V2, so V0.3 is an application-only upgrade and preserves V0.2 data in place.
+- Database schema remains V2, so V0.3.1 is an application-only upgrade and preserves V0.2 data in place.
 - Encrypted `.healthdash` full backup/restore remains compatible with older backups.
 - PWA/service worker allows install and offline use.
 
@@ -30,4 +32,4 @@ Garmin, Withings and Nutracheck remain represented as data sources. Manual input
 ## Deploy to GitHub Pages
 Make an encrypted backup first. Then upload the **contents** of this folder to the root of the existing `health-dashboard` repository, replacing files with the same names. Do not delete the repository or change the Pages settings.
 
-Replacing application files does **not** erase IndexedDB data. After GitHub deploys V0.3, use **Settings → Check deployed version → Reload latest** in the installed app.
+Replacing application files does **not** erase IndexedDB data. After GitHub deploys V0.3.1, use **Settings → Check deployed version → Reload latest** in the installed app.
