@@ -1,8 +1,8 @@
 /* Health Dashboard local-first data layer. Personal data never needs to leave this browser profile. */
 const HealthDB = (() => {
   const DB_NAME = 'HealthDashboardDB';
-  const DB_VERSION = 3;
-  const STORES = ['profile','measurements','habits','activities','nutrition','goals','journal','injuries','lessons','achievements','settings','checkins','plans'];
+  const DB_VERSION = 4;
+  const STORES = ['profile','measurements','habits','activities','nutrition','goals','journal','injuries','lessons','achievements','settings','checkins','plans','photos'];
   let dbPromise;
 
   function open(){
