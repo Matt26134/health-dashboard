@@ -1,4 +1,14 @@
-# Health & Performance Dashboard v1.0.0-rc3.2 — Health-State Launch Hotfix
+
+## RC4 Full-Day Rehearsal
+
+- Morning Check-in is the first daily action and captures weight, sleep, energy, hunger, context and the planned activity.
+- Entering weight in Morning Check-in automatically completes the Morning weigh-in action.
+- Saving the check-in generates a Morning Briefing that interprets weight trend, sleep, training load, injury context and the adaptive calorie target.
+- Test Drive now seeds 14 historical days through yesterday and deliberately leaves today blank for a real end-to-end rehearsal.
+- Close Today is surfaced near the top of Today and generates a richer daily report with tomorrow's focus.
+- Manual-first Garmin / Withings / Nutracheck workflow remains unchanged.
+
+# Health & Performance Dashboard v1.0.0-rc4 — Health-State Launch Hotfix
 
 Local-first personal PWA for weight loss, motivation, running/performance and behaviour change.
 

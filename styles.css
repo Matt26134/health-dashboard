@@ -64,3 +64,16 @@
 @media(max-width:430px){.morning-cta,.close-day-card,.weekly-close-card{align-items:flex-start;flex-direction:column}.morning-cta .primary-btn,.close-day-card .primary-btn,.weekly-close-card .primary-btn{width:100%}.report-columns{grid-template-columns:1fr}.daily-plan-card .button-row{display:grid;grid-template-columns:1fr 1fr}.daily-plan-card .button-row .link-btn{grid-column:1/-1;text-align:left}.planned-session .cols-2{grid-template-columns:1fr 1fr}}
 
 .launch-history-choice{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1px solid var(--line);border-radius:18px;background:var(--soft);margin:12px 0 18px}.launch-history-choice input{width:20px;height:20px;margin-top:2px;accent-color:var(--purple)}.launch-history-choice span{display:flex;flex-direction:column;gap:4px}.launch-history-choice small{color:var(--muted);line-height:1.45}.primary-btn:disabled{opacity:.5;cursor:not-allowed}
+
+/* RC4 full-day rehearsal */
+.morning-briefing-card{border:1px solid color-mix(in srgb,var(--accent) 28%,transparent)}
+.briefing-focus{margin:12px 0 0;line-height:1.5}
+.briefing-list{display:grid;gap:10px;margin:14px 0}
+.briefing-item{display:grid;grid-template-columns:42px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.briefing-item:last-child{border-bottom:0}
+.briefing-icon{font-size:24px;line-height:1.2}
+.briefing-item p{margin:5px 0 0;line-height:1.5;color:var(--muted)}
+.report-day-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:10px}
+.report-day-grid>div{display:flex;flex-direction:column;gap:3px}
+.report-day-grid span{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.report-day-grid strong{font-size:15px}
