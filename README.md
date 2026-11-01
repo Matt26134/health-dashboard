@@ -1,4 +1,4 @@
-# Health & Performance Dashboard v1.0.0-rc3 — Final Health-State Launch Candidate
+# Health & Performance Dashboard v1.0.0-rc3.1 — Health-State Launch Hotfix
 
 Local-first personal PWA for weight loss, motivation, running/performance and behaviour change.
 
