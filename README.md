@@ -1,33 +1,44 @@
-# Health & Performance Dashboard v0.99.0 — Full Dress Rehearsal
+# Health & Performance Dashboard v1.0.0-rc1 — Launch Candidate
 
-Local-first personal PWA for motivation, weight loss, running/performance, habits and behaviour-change learning.
+Local-first personal PWA for weight loss, motivation, running/performance and behaviour change.
 
-## Architecture
+## Launch
+- Real journey start: **Monday 2 November 2026**
+- Madrid Marathon: **Sunday 25 April 2027**
+- Madrid weight target: **190 lb**
+- Ultimate target: **180 lb**
+- v1.0 is deliberately **manual-first**. No Garmin/Withings connector is required.
 
-- **GitHub Pages** hosts only the application files.
-- **IndexedDB (`HealthDashboardDB`, schema v4)** holds personal records locally on the device/browser profile.
-- **Encrypted `.healthdash` backups** protect portable copies using the existing password-based AES-256-GCM backup flow.
-- **Service worker + manifest** provide installable/offline PWA behaviour.
-- **Optional secure connector** is separate from this public repo. It holds Garmin/Withings secrets and returns normalised values for local import; it is not the long-term health database.
+## Daily loop
+1. **Morning Check-in** — weight, sleep hours, energy, hunger, body/mood, injury/illness context.
+2. **Plan today** — Run / Swim / Bike / Gym / Football / Walk / Rest / Other, with session subtype and distance/time. Multiple sessions supported.
+3. **Adaptive calorie target** — rest-day calorie anchor + a conservative training adjustment. The app does not automatically eat back all exercise calories.
+4. **Log activity done** — type, distance/time, Garmin-reported calories burned, effort and enjoyment.
+5. **Personal burn learning** — comparable completed sessions teach the app your kcal/mile or kcal/min pattern with Low / Medium / High confidence.
+6. **Nutrition** — manually copy the useful daily totals from Nutracheck.
+7. **Close Today** — warning for missing items, subjective rating, then a saved daily report. Closed days are read-only until deliberately reopened.
+8. **Sunday Close Week** — weekly report + conservative calorie calibration suggestion. Base-calorie changes are never automatic.
 
-## v0.99.0 adds
+## Calorie model guardrails
+- Your configured **rest-day calorie target** is the anchor.
+- Planned training can adjust the day **up**, not automatically cut the base target down.
+- Only a proportion of estimated exercise energy is returned to the food budget.
+- The model uses bodyweight for its starting exercise estimate and gradually blends in your own manually entered Garmin calorie history.
+- Weekly calibration requires enough weight + nutrition history and can suggest only a small change (normally ±100 kcal). You must explicitly apply it.
+- A single weigh-in or single high/low calorie day never triggers an automatic target change.
+- The calorie model is a planning aid, not a medical prescription.
 
-- Full Road-to-Madrid curriculum: **174 daily lessons/review days** through 25 April 2027.
-- Lessons now expand into real ~3–4 minute reads, evidence/further-reading links, practical experiments and a knowledge check before completion.
-- **84 launch badges** spanning consistency, weight, training, learning, resilience, seasonal milestones and non-scale progress.
-- Garmin/Withings connector UI and import logic; Nutracheck remains a fast daily-summary workflow.
-- Progress photos stored locally (resized on-device) and included in encrypted backups.
-- Screen-time and actual-bedtime fields in daily check-ins.
-- Full Day-1 onboarding, launch preflight, reversible Test Drive, injury-aware coaching, transparent Momentum/H&P scores and weight-progress engine from earlier releases.
+## Manual data sources
+- **Withings Body+**: type morning weight into Morning Check-in.
+- **Garmin Forerunner 945**: after training, copy distance/time and Garmin-reported calories burned.
+- **Nutracheck**: copy daily calorie/protein/fibre/fruit-and-veg totals.
+- Automatic integrations are parked for a future release.
 
-## Update an existing install
+## Local storage & privacy
+All personal data stays in IndexedDB in the current browser/app profile. GitHub contains application code only. Encrypted `.healthdash` backups remain supported.
 
-Upload all files from this folder to the root of the existing `health-dashboard` GitHub repo, replacing the existing files. Leave GitHub Pages settings alone. In the installed app use **Settings → Check deployed version → Reload latest**.
+## Test drive
+Test Drive snapshots the entire local database before loading synthetic data. `Reset demo` restores that snapshot and the v1 migration moves the real launch date from the previous 3 November setting to **2 November 2026**.
 
-The upgrade is in-place. Existing v0.9 local records remain in IndexedDB. The lesson seed is intentionally bumped so an existing v0.9 database receives all 174 curriculum entries while preserving completed lesson state.
-
-## Data connections
-
-The PWA remains fully usable manually. For automatic Garmin + Withings imports, deploy the separate `HealthDashboard-Connector-v1.0.0` Cloudflare Worker package, configure its secrets privately, then enter only the Worker URL and the separate connector access token in **Settings → Configure connector**.
-
-Never commit Garmin API keys, Withings client secrets, OAuth tokens or the connector bearer token to this GitHub Pages repo.
+## Deploy
+Upload the contents of this folder to the root of the existing `health-dashboard` GitHub repository and keep GitHub Pages configured to deploy `main / (root)`.
