@@ -1,71 +1,38 @@
+# Health & Performance Dashboard v1.0.0 — Launch Edition
 
-## RC4 Motivation & Daily Flow
-
-- Morning Check-in is the first daily action and captures weight, sleep, energy, hunger, context and the planned activity.
-- Entering weight in Morning Check-in automatically completes the Morning weigh-in action.
-- Saving the check-in generates a Morning Briefing that interprets weight trend, sleep, training load, injury context and the adaptive calorie target.
-- Test Drive now seeds 14 historical days through yesterday and deliberately leaves today blank for a real end-to-end rehearsal.
-- Close Today is surfaced near the top of Today and generates a richer daily report with tomorrow's focus.
-- Manual-first Garmin / Withings / Nutracheck workflow remains unchanged.
-
-# Health & Performance Dashboard v1.0.0-rc5 — Health-State Launch Hotfix
-
-Local-first personal PWA for weight loss, motivation, running/performance and behaviour change.
+Local-first, offline-capable personal health/performance PWA.
 
 ## Launch
-- Real journey start: **Monday 2 November 2026**
-- Madrid Marathon: **Sunday 25 April 2027**
-- Madrid weight target: **190 lb**
-- Ultimate target: **180 lb**
-- v1.0 is deliberately **manual-first**. No Garmin/Withings connector is required.
+- **Day 1:** Monday 2 November 2026
+- **Madrid Marathon:** Sunday 25 April 2027
+- **Madrid weight target:** 190 lb
+- **Ultimate target:** 180 lb
+- v1.0 is deliberately **manual-first**: Withings weight, Garmin activity/calories and Nutracheck daily totals are entered manually.
 
-## Daily loop
-1. **Morning Check-in** — weight, sleep hours, energy, hunger, body/mood, injury/illness context.
-2. **Plan today** — Run / Swim / Bike / Gym / Football / Walk / Rest / Other, with session subtype and distance/time. Multiple sessions supported.
-3. **Adaptive calorie target** — rest-day calorie anchor + a conservative training adjustment. The app does not automatically eat back all exercise calories.
-4. **Log activity done** — type, distance/time, Garmin-reported calories burned, effort and enjoyment.
-5. **Personal burn learning** — comparable completed sessions teach the app your kcal/mile or kcal/min pattern with Low / Medium / High confidence.
-6. **Nutrition** — manually copy the useful daily totals from Nutracheck.
-7. **Close Today** — warning for missing items, subjective rating, then a saved daily report. Closed days are read-only until deliberately reopened.
-8. **Sunday Close Week** — weekly report + conservative calorie calibration suggestion. Base-calorie changes are never automatic.
+## One-time clean launch preparation
+This specific Launch Edition performs a **one-time local cleanup on first open** because the owner explicitly requested a completely clean Day 1. It removes all previous demo/test/personal tracking data from the browser database, including injuries, photos, reports, XP/badges and lesson completions, then recreates only the blank v1 defaults/goals/curriculum. A local browser marker prevents the cleanup from running again after the real journey begins.
 
-## Calorie model guardrails
-- Your configured **rest-day calorie target** is the anchor.
-- Planned training can adjust the day **up**, not automatically cut the base target down.
-- Only a proportion of estimated exercise energy is returned to the food budget.
-- The model uses bodyweight for its starting exercise estimate and gradually blends in your own manually entered Garmin calorie history.
-- Weekly calibration requires enough weight + nutrition history and can suggest only a small change (normally ±100 kcal). You must explicitly apply it.
-- A single weigh-in or single high/low calorie day never triggers an automatic target change.
-- The calorie model is a planning aid, not a medical prescription.
+## Core daily loop
+1. Morning Check-in: weight, sleep, energy, hunger, current health context and today’s planned activity.
+2. Morning Briefing: interprets weight trend, sleep, training load and adaptive calorie target.
+3. Live Today: habits, steps, water, nutrition, learning and planned movement.
+4. Log actual activity: distance/time and Garmin-reported calories; the model learns your own exercise-burn pattern.
+5. Close Today: missing-item check, Daily Report, repeated-miss coaching and tomorrow’s priority.
+6. Sunday: weekly review/calibration. Calorie changes are suggestions only and never automatic.
 
-## Manual data sources
-- **Withings Body+**: type morning weight into Morning Check-in.
-- **Garmin Forerunner 945**: after training, copy distance/time and Garmin-reported calories burned.
-- **Nutracheck**: copy daily calorie/protein/fibre/fruit-and-veg totals.
-- Automatic integrations are parked for a future release.
+## Motivation
+- Road to Madrid uses behaviour-earned Momentum XP and never removes earned progress.
+- 10 progression levels, badges, trophy cabinet, secret achievements and milestone moments.
+- Average Momentum and Momentum XP are tappable and explained transparently.
 
-## Local storage & privacy
-All personal data stays in IndexedDB in the current browser/app profile. GitHub contains application code only. Encrypted `.healthdash` backups remain supported.
+## Progress photos
+Photos remain local-only and encrypted in backups. Gallery supports view filtering, full-screen viewing and same-view earliest-vs-latest comparisons with date/weight context where available.
 
-## Test drive
-Test Drive snapshots the entire local database before loading synthetic data. `Reset demo` restores that snapshot and the v1 migration moves the real launch date from the previous 3 November setting to **2 November 2026**.
+## Privacy / offline
+All personal data lives in IndexedDB on the current browser/app profile. GitHub hosts application code only. The installed PWA works offline after it has loaded once online. External evidence links and future integrations naturally require internet.
+
+## Future backlog
+See `BACKLOG.md`.
 
 ## Deploy
-Upload the contents of this folder to the root of the existing `health-dashboard` GitHub repository and keep GitHub Pages configured to deploy `main / (root)`.
-
-## RC3 launch-state change
-
-A fresh Day 1 clears previous injury/illness history. Launch asks whether you are currently fit and healthy; if not, it records when the issue started, what happened, what it affects, current restrictions and activities you consider okay. That record immediately drives Morning Check-in and adaptive coaching.
-
-
-## RC3.2 recovery note
-All JavaScript assets use new versioned filenames to bypass stale RC3/RC3.1 service-worker caches. A startup watchdog now displays an actionable error instead of a blank screen.
-
-
-## RC5 additions
-- Morning Check-in no longer asks for a daily loss-rate decision.
-- Active injury questions only appear while an injury/illness is active.
-- Steps and water have separate entry flows; steps include a 14-day history and 7-day average.
-- Daily Report v2 explains misses, detects consecutive patterns, rotates coaching, and can offer a step-goal review after repeated misses.
-- Road to Madrid is now a behaviour-driven visual journey with 10 levels and Momentum XP. Progress never goes backwards.
-- Trophy Cabinet includes visible and secret achievements, with milestone/level-up moments in end-of-day reports.
+Upload every file in this folder to the root of the existing `health-dashboard` GitHub repository. GitHub Pages remains configured to deploy `main / (root)`.
