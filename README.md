@@ -1,4 +1,4 @@
-# Health & Performance Dashboard v1.0.0-rc1 — Launch Candidate
+# Health & Performance Dashboard v1.0.0-rc3 — Final Health-State Launch Candidate
 
 Local-first personal PWA for weight loss, motivation, running/performance and behaviour change.
 
@@ -42,3 +42,7 @@ Test Drive snapshots the entire local database before loading synthetic data. `R
 
 ## Deploy
 Upload the contents of this folder to the root of the existing `health-dashboard` GitHub repository and keep GitHub Pages configured to deploy `main / (root)`.
+
+## RC3 launch-state change
+
+A fresh Day 1 clears previous injury/illness history. Launch asks whether you are currently fit and healthy; if not, it records when the issue started, what happened, what it affects, current restrictions and activities you consider okay. That record immediately drives Morning Check-in and adaptive coaching.

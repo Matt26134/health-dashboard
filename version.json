@@ -1,5 +1,6 @@
 {
-  "version": "1.0.0-rc1",
-  "release": "Launch Candidate",
-  "published": "2026-11-01"
+  "version": "1.0.0-rc3",
+  "release": "Final Health-State Launch Candidate",
+  "published": "2026-11-01",
+  "name": "Final Health-State Launch Candidate"
 }
