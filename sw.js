@@ -1,5 +1,5 @@
-const CACHE_NAME='health-dashboard-v1.0.0-rc4';
-const APP_SHELL=['./','./index.html','./styles.css','./db-rc4.js','./curriculum-rc4.js','./integrations-rc4.js','./app-rc4.js','./v1features-rc4.js','./manifest.webmanifest','./version.json','./app-icon-192.png','./app-icon-512.png'];
+const CACHE_NAME='health-dashboard-v1.0.0-rc5';
+const APP_SHELL=['./','./index.html','./styles.css','./db-rc5.js','./curriculum-rc5.js','./integrations-rc5.js','./app-rc5.js','./v1features-rc5.js','./manifest.webmanifest','./version.json','./app-icon-192.png','./app-icon-512.png'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE_NAME).then(c=>c.addAll(APP_SHELL)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',event=>{

@@ -1,5 +1,5 @@
 
-## RC4 Full-Day Rehearsal
+## RC4 Motivation & Daily Flow
 
 - Morning Check-in is the first daily action and captures weight, sleep, energy, hunger, context and the planned activity.
 - Entering weight in Morning Check-in automatically completes the Morning weigh-in action.
@@ -8,7 +8,7 @@
 - Close Today is surfaced near the top of Today and generates a richer daily report with tomorrow's focus.
 - Manual-first Garmin / Withings / Nutracheck workflow remains unchanged.
 
-# Health & Performance Dashboard v1.0.0-rc4 — Health-State Launch Hotfix
+# Health & Performance Dashboard v1.0.0-rc5 — Health-State Launch Hotfix
 
 Local-first personal PWA for weight loss, motivation, running/performance and behaviour change.
 
@@ -60,3 +60,12 @@ A fresh Day 1 clears previous injury/illness history. Launch asks whether you ar
 
 ## RC3.2 recovery note
 All JavaScript assets use new versioned filenames to bypass stale RC3/RC3.1 service-worker caches. A startup watchdog now displays an actionable error instead of a blank screen.
+
+
+## RC5 additions
+- Morning Check-in no longer asks for a daily loss-rate decision.
+- Active injury questions only appear while an injury/illness is active.
+- Steps and water have separate entry flows; steps include a 14-day history and 7-day average.
+- Daily Report v2 explains misses, detects consecutive patterns, rotates coaching, and can offer a step-goal review after repeated misses.
+- Road to Madrid is now a behaviour-driven visual journey with 10 levels and Momentum XP. Progress never goes backwards.
+- Trophy Cabinet includes visible and secret achievements, with milestone/level-up moments in end-of-day reports.
