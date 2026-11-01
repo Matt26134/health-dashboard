@@ -1,4 +1,4 @@
-# Health & Performance Dashboard v1.0.0-rc3.1 — Health-State Launch Hotfix
+# Health & Performance Dashboard v1.0.0-rc3.2 — Health-State Launch Hotfix
 
 Local-first personal PWA for weight loss, motivation, running/performance and behaviour change.
 
@@ -46,3 +46,7 @@ Upload the contents of this folder to the root of the existing `health-dashboard
 ## RC3 launch-state change
 
 A fresh Day 1 clears previous injury/illness history. Launch asks whether you are currently fit and healthy; if not, it records when the issue started, what happened, what it affects, current restrictions and activities you consider okay. That record immediately drives Morning Check-in and adaptive coaching.
+
+
+## RC3.2 recovery note
+All JavaScript assets use new versioned filenames to bypass stale RC3/RC3.1 service-worker caches. A startup watchdog now displays an actionable error instead of a blank screen.
