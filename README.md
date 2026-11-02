@@ -1,4 +1,18 @@
-# Health & Performance Dashboard v1.0.0 — Launch Edition
+# Health & Performance Dashboard v1.1.0 — Day 2 Edition
+
+This release is the full Day-1 feedback pass. It preserves existing local Day 1 data and upgrades the core daily loop before Day 2: exact hydration and exercise-time entry, anchored rating scales, time-aware bedtime scoring, digital wellbeing, lesson locking, weekly progress photos and stronger selection/contrast states.
+
+## Day 2 changes
+- Water supports values such as 2.25 L.
+- Exercise duration supports MM:SS / H:MM:SS.
+- Bedtime is compared with the stored target rather than manually ticked.
+- Total screen time and social-media time use hours/minutes and build trend data.
+- Rating scales explain every 1–5 value.
+- Future lessons stay locked; completed lessons stay reviewable.
+- Weekly progress-photo prompts use Front / Side / Back / Face.
+- Selected chips and accent surfaces have clearer accessible contrast.
+
+## Original Launch Edition notes
 
 Local-first, offline-capable personal health/performance PWA.
 
