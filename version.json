@@ -1,6 +1,6 @@
 {
-  "version": "1.1.1",
-  "name": "Daily Polish & Reliability",
+  "version": "1.1.2",
+  "name": "Motivation & Experience",
   "released": "2026-11-04",
-  "notes": "Safe, in-place UI polish; no data migration or reset"
+  "notes": "Single activity-entry flow, resilience coaching, unified recovery, achievements and sleep-aware hydration. No historical data migration."
 }

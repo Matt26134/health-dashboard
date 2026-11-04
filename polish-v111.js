@@ -57,7 +57,7 @@
     if(!latest)return html;
     const isToday=latest.date===isoDate();const label=isToday?"THIS MORNING'S WEIGHT":'LATEST RECORDED WEIGHT';
     const loss=state.profile.startWeight!=null?Number(state.profile.startWeight)-Number(latest.value):null;
-    const card=`<section class="card v111-latest-weight" aria-label="Actual recorded weight and trend"><div class="metric-label">${label}</div><div class="v111-weight-numbers"><div><strong>${Number(latest.value).toFixed(1)} <small>lb</small></strong><span>${isToday?'Weighed today':fmtDate(latest.date,{day:'numeric',month:'short'})}${loss!=null?` · ${Math.abs(loss).toFixed(1)} lb ${loss>=0?'down':'up'} since Day 1`:''}</span></div><div><span class="metric-label">7-DAY TREND</span><strong>${avg7!=null?avg7.toFixed(1)+' lb':'—'}</strong><span>Smoothed average, not today's number</span></div></div></section>`;
+    const card=`<section class="card v111-latest-weight" aria-label="Actual recorded weight and trend"><div class="v112-weight-grid"><div class="v112-weight-panel"><div class="metric-label">${label}</div><strong>${Number(latest.value).toFixed(1)} <small>lb</small></strong><span>${isToday?'Weighed today':fmtDate(latest.date,{day:'numeric',month:'short'})}${loss!=null?` · ${Math.abs(loss).toFixed(1)} lb ${loss>=0?'down':'up'} since Day 1`:''}</span></div><div class="v112-weight-panel"><div class="metric-label">7-DAY TREND</div><strong>${avg7!=null?avg7.toFixed(1)+' lb':'—'}</strong><span>Smoothed average, not today's number</span></div></div></section>`;
     return card+html;
   };
   // Keep the user-visible daily recognition fresh even when the rest of the app hasn't refreshed.

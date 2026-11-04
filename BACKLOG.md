@@ -1,4 +1,4 @@
-# Health Dashboard remaining / future backlog after v1.1.0
+# Health Dashboard remaining / future backlog after v1.1.2
 
 ## Intentionally deferred
 - Automatic Garmin, Withings and Nutracheck integration: must have secure credentials and a separate service; app stays manual-first and offline-capable.
@@ -16,7 +16,14 @@
 - Build changes as consolidated, tested releases rather than numerous patches.
 
 
-## Future polish beyond v1.1.1
+## Future polish beyond v1.1.2
 - Optional permanent record of precise badge unlock timestamps (currently achievement status is derived, with no invented dates).
 - Optional manual linking of historic planned activities where no plan-session record survived, without altering closed-day scores.
 - Further evidence-backed coaching variation after several weeks of real observations.
+
+## Post-release device verification / Day 4 feedback
+- On the real Samsung app, verify all activity entry points show hours, minutes and seconds, and a saved 15:03 session reopens as 15:03. Test a closed-day history view without editing any closed days.
+- Confirm the user’s actual earned count agrees with the cabinet and View All, and reconstructed dates match original event dates where available.
+- Confirm total drinks and night-time toilet count save and survive reopening; observe whether evening drinking guidance reduces sleep interruption without forcing a volume.
+- Watch Day 4/5 motivation for repetition/overwhelm and improve with genuine day-end reflection feedback rather than generic overcoaching.
+- Complete end-to-end GitHub Pages/installed-PWA cache upgrade smoke test on the user's real phone (not possible in isolated test Chromium).

@@ -1,5 +1,5 @@
-const APP_VERSION='1.1.1';
-const RELEASE_NAME='Daily Polish & Reliability';
+const APP_VERSION='1.1.2';
+const RELEASE_NAME='Motivation & Experience';
 const DEFAULT_START='2026-11-02';
 const MADRID_DATE='2027-04-25';
 const DEFAULTS={
@@ -256,7 +256,7 @@ async function todayMetricCards(h){
   <div class="metric-card tappable-card" data-open-input="nutrition"><div class="metric-label">CALORIES</div><div class="metric-value">${n.calories??'—'}</div><div class="metric-sub">${n.calories!=null?(p.calorieTarget?`of ${p.calorieTarget.toLocaleString()} kcal`:'target not set'):'Tap to enter Nutracheck totals'}</div></div>
   <div class="metric-card tappable-card" data-open-input="nutrition"><div class="metric-label">PROTEIN</div><div class="metric-value">${n.protein!=null?`${n.protein}g`:'—'}</div><div class="metric-sub">${p.proteinTarget?`Target ${p.proteinTarget}g`:'Target not set'}</div></div>
   <div class="metric-card tappable-card" data-open-input="today"><div class="metric-label">STEPS</div><div class="metric-value">${steps?steps.toLocaleString():'—'}</div><div class="metric-sub">${p.stepTarget?`Target ${p.stepTarget.toLocaleString()}`:'Tap to update'}</div></div>
-  <div class="metric-card tappable-card" data-open-input="today"><div class="metric-label">WATER</div><div class="metric-value">${h.waterLitres!=null?`${h.waterLitres}L`:'—'}</div><div class="metric-sub">${p.waterTarget?`Target ${p.waterTarget}L`:'Tap to update'}</div></div>`;
+  <div class="metric-card tappable-card" data-open-input="today"><div class="metric-label">FLUIDS</div><div class="metric-value">${h.totalFluidsLitres!=null?`${Number(h.totalFluidsLitres).toFixed(2)}L`:(h.waterLitres!=null?`${h.waterLitres}L`:'—')}</div><div class="metric-sub">${p.waterTarget?`Daily guide ${p.waterTarget}L`:'Tap to update'}</div></div>`;
 }
 async function todayCheckinCard(){return '';}
 async function tomorrowPlanCard(){const plan=await tomorrowPlan();const tomorrow=addDays(isoDate(),1);if(!plan)return `<section class="card tappable-card input-prompt" data-open-input="plan"><div><div class="metric-label">TOMORROW</div><strong>Make tomorrow easier tonight</strong><p>Set the movement, calorie and step plan you want the dashboard to hold you to.</p></div><span>→</span></section>`;const bits=[plan.activity,plan.calorieTarget?`${plan.calorieTarget} kcal`:null,plan.stepTarget?`${Number(plan.stepTarget).toLocaleString()} steps`:null].filter(Boolean);return `<section class="card tappable-card" data-open-input="plan"><div class="goal-head"><div><div class="metric-label">TOMORROW • ${fmtDate(tomorrow,{weekday:'short',day:'numeric',month:'short'})}</div><strong>${esc(plan.activity||'Plan saved')}</strong><small>${esc(bits.slice(1).join(' • ')||'Tap to edit')}</small></div><span class="pill good">PLANNED</span></div></section>`;}

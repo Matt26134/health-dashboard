@@ -1,21 +1,26 @@
-# Health & Performance v1.1.1 — Daily Polish & Reliability
+# Health Dashboard v1.1.2 — Motivation & Experience
 
-**An in-place update from v1.1.0, not a reset.** The previous two days and all other personal data remain in local IndexedDB.
+**In-place update from v1.1.1. No data reset or migration.** The existing offline-first dashboard, IndexedDB history, banked daily reports, photos, workouts, measurements, lessons, injury entries, Momentum and XP remain on the **same device and browser**.
 
-## Upgrade
-1. In the installed app, **Settings → Export everything** first. Keep the encrypted backup on your phone or another safe place.
-2. Extract the ZIP, then upload all its contents to the root of the existing GitHub `health-dashboard` repository. Do not upload the ZIP itself. GitHub Pages remains `main / (root)`.
-3. Open `https://matt26134.github.io/health-dashboard/?release=1.1.1` online in Samsung Internet after deployment, then restart the installed app. If necessary use **Settings → Check deployed version → Reload latest**.
-4. Confirm Settings shows v1.1.1. Verify today's weight, Day 1/2 reports and your logged strength activity remain intact.
+## Upgrade via GitHub Pages
 
-**Do not uninstall, reset Test Drive, clear site data or delete the old database.**
+1. In your existing app, use **Settings → Export everything** to make an encrypted backup. Store the file safely.
+2. Unzip this release. Upload the contents, **not the ZIP**, to the **root** of the existing GitHub `health-dashboard` repository, replacing the earlier app files. Keep GitHub Pages set to `main / (root)`.
+3. After GitHub Pages deploys, open `https://matt26134.github.io/health-dashboard/?release=1.1.2` online in the **same browser** used for your existing dashboard.
+4. Close and reopen the installed app. If necessary, use **Settings → Check deployed version → Reload latest**. Verify Settings says **v1.1.2**, then verify your weights, banked days, injury, logged activities and lesson progress are still present.
 
-## Scope
-- Historical activity durations display cleanly in both Training's summary and Activity History. The app does **not** attempt to guess that a stored 39.34 decimal minutes meant 39:34.
-- Planned vs actual only counts explicit links; independently logged activities are acknowledged as unlinked, not failed. You can link an activity to a morning plan by editing the activity (when that plan session still exists).
-- Completed lessons read 'Review' in the Current Lesson card.
-- Trophy Cabinet has a consistent phone-width three-column grid and descriptive trophy detail views.
-- Today is shorter, with expandable secondary sections and a recognition card for meaningful early wins.
-- Progress shows the actual latest weight alongside the 7-day moving average.
+**Do not uninstall the app, reset its data, use Test Drive, or clear browser/site storage.** Clearing site data would remove the locally stored records; this package does not.
 
-All future automation/integration work remains separate and disabled. External evidence links require internet; cached app and lessons work offline.
+## What changed
+
+- **Day 4/5 motivation:** Contextual, prominent anti-quit coaching. An optional "I'm struggling" / "Plan tomorrow" action lets you save one realistic support anchor. No shame, compensatory workouts or automated extra restriction. A 2 lb/week initial ambition is framed as an upper-end aim and reassessed against hunger, sleep and recovery.
+- **Activity entry:** Quick Add and Training use the same hours / minutes / seconds editor. All stored new durations use integer seconds. Effort, feeling and enjoyment 1–5 choices now include descriptive anchors. Old records are only reformatted; they are not silently changed.
+- **Recovery:** One comprehensive recovery journey card on Today, with status, injury actions, restrictions and context. The underlying injury history is unchanged.
+- **Trophies:** Up to six earned badges appear first with a precise "showing X of Y" label; all earned achievements can be opened. Dates are reconstructed from available real records; unavailable historical dates say so instead of being invented.
+- **Progress:** Balanced two-column latest weight versus seven-day rolling average.
+- **Hydration & sleep:** Optional morning count of overnight toilet trips, plain water plus other drinks (e.g. tea and milk), and last substantial drink time. Existing water-only history is preserved. Drinking guidance is flexible, not compulsory and does not override advice to seek medical assessment for persistent frequent urination.
+- **Evening reflection:** Optional descriptive 1–5 tomorrow-confidence rating for future coaching.
+
+## Architecture and testing limits
+
+No external syncing or AI-web dependency: data remains locally stored, and offline support remains enabled. Browser-level tests exercised the real UI and save handlers against **synthetic records in an isolated Chromium session**, including new duration, motivation, trophies, injury card, fluids and morning night-time waking field. Automated JavaScript checks also pass. Local site navigation was blocked in the test environment, so a complete GitHub Pages/service-worker upgrade in the user's Samsung browser **has not been verified**.
