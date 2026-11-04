@@ -1,25 +1,20 @@
 # Changelog
 
-## v1.1.0 — Personal Coach & Insights (3 November 2026)
+## v1.1.1 — Daily Polish & Reliability (4 November 2026)
 
 ### Fixed
-- Exercise duration no longer confuses `39.34` decimal minutes with `39:34`. Exact separate hours/minutes/seconds are stored as total seconds.
-- Running → **Training**, and the **+ Activity** button directly opens the working manual activity form.
-- Nutrition accepts fractional fibre and fruit/veg values, and hydration allows two decimals.
-- Weekly-review 1–5 ratings and confidence now have words anchoring each choice.
-- Poor pale-hero text contrast, mobile-width containment and worsened-injury green-status styling.
+- Historical exercise durations display as `MM:SS` / `H:MM:SS`; no records are rewritten. Older decimal-minute values retain their originally saved meaning.
+- Planned-vs-actual distinguishes explicitly linked sessions from unrelated logged activities. Unlinked activities are **not** treated as missed.
+- Completed current lesson clearly shows **Review** instead of **Open**.
+- Trophy Cabinet uses a fixed three-column responsive grid; earned trophies open a meaningful explanation.
+- Progress shows the last actual weigh-in prominently alongside the 7-day trend.
 
-### Added
-- Day-based home continuity and contextual motivation.
-- Personalised Morning Coach's Briefing based on yesterday and current inputs.
-- Confirm last night's bedtime in the following Morning Check-in; measure against target.
-- Interactive Close Today reflection, structured challenges, meal timing, digital wellbeing and richer reports.
-- Symptom/pain recovery log and timeline context.
-- Weekly photo task and any-date same-view comparison.
-- Lesson unlock-by-date; permanently reviewable past content.
-- Race calendar, conservative illustrative pace conversions, plateau watch, personal insights (with sample limits), maintenance settings.
-- Search/history, single-file CSV downloads, monthly focus and flexible goals.
-- In-app reminder preferences and a transparent offline limitation.
+### Refined
+- Morning Briefing shows two primary observations and keeps additional context behind a tap-to-expand panel.
+- Today folds weekly priorities and streaks; completed checklist items become more compact.
+- Recognises two consecutive falling weigh-ins or the first strength session without treating short-term scale change as pure fat loss.
 
-### Preserved
-- Local IndexedDB, encrypted full backup/restore, progress trajectory, Road to Madrid XP/badges, existing real training/weight/nutrition/injury/lesson records, manual-first data capture and offline lessons.
+### Safety
+- No data deletion, resetting, migrations, re-seeding, or changing existing activity values.
+- Existing photos, nutrition, lesson completions, injuries, reports, Momentum and XP remain in local IndexedDB.
+- Manual-first, offline PWA architecture unchanged.

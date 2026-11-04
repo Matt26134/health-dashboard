@@ -14,3 +14,9 @@
 - Do not penalise earned progress or use guilt-based gamification.
 - Scores and advice should always have an accessible explanation.
 - Build changes as consolidated, tested releases rather than numerous patches.
+
+
+## Future polish beyond v1.1.1
+- Optional permanent record of precise badge unlock timestamps (currently achievement status is derived, with no invented dates).
+- Optional manual linking of historic planned activities where no plan-session record survived, without altering closed-day scores.
+- Further evidence-backed coaching variation after several weeks of real observations.
