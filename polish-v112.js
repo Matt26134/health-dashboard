@@ -1,4 +1,4 @@
-/* Health Dashboard v1.1.2 — motivation & reliability improvements.
+/* Health Dashboard v1.1.3 — motivation & reliability improvements.
    Additive UI only. Never clears a database or rewrites banked reports. */
 (()=>{
 'use strict';
