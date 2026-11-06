@@ -152,5 +152,6 @@ bindViewEvents=function(){
  // Catch old standalone bedtime toggle buttons, if a screen renders one.
  document.querySelectorAll('[data-next-habit="bedtime"]').forEach(el=>el.onclick=e=>{e.preventDefault();e.stopPropagation();bedtimeHelp114();});
 };
+window.HealthV114BedtimeHelp=bedtimeHelp114;
 window.HealthV114Diagnostics={summary114,support114,streak114};
 })();

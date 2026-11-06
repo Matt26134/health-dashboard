@@ -78,6 +78,11 @@ async function achievementDate(b){
   if(/supplement days/.test(detail))return nth(habits.filter(x=>x.vitamins),parseInt(detail,10));
   if(/strength session/.test(detail))return nth(acts.filter(x=>x.type==='strength'||(x.type==='gym'&&String(x.subtype).toLowerCase()==='strength')),parseInt(detail,10));
   if(/^\d+ lesson/.test(detail))return (lessons[parseInt(detail,10)-1]?.completedAt||'').slice(0,10)||null;
+  if(/^\d+-day .* streak$/i.test(detail)){
+    const required=parseInt(detail,10);
+    const key=title.toLowerCase().startsWith('nutrition')?'nutrition':title.toLowerCase().startsWith('protein')?'protein':title.toLowerCase().startsWith('fibre')?'fibre':title.toLowerCase().startsWith('hydration')?'water':title.toLowerCase().startsWith('steps')?'steps':title.toLowerCase().startsWith('momentum')?'checkin':null;
+    if(key){let run=0,previous=null;for(const row of habits){if(previous&&daysBetween(previous,row.date)!==1)run=0;run=row[key]?run+1:0;if(run>=required)return row.date;previous=row.date;}}
+  }
   if(/lb lost/.test(detail)){const n=parseInt(detail,10),start=Number(state.profile.startWeight);return start?weights.find(x=>start-Number(x.value)>=n)?.date||null:null;}
   if(title==='Madrid weight'||title==='Ultimate'){const target=Number(title==='Madrid weight'?state.profile.madridWeight:state.profile.ultimateWeight);return weights.find(x=>Number(x.value)<=target)?.date||null;}
   return null; // Never invent dates for achievements which cannot be reconstructed.
@@ -116,5 +121,6 @@ bindViewEvents=function(){priorBind();
   // Ensure even late-bound quick actions use the single edited activity form.
   assign('logActualActivity',()=>openActivityModal());
 };
+window.HealthV112SupportModal=supportModal;
 window.HealthV112Diagnostics={achievementDate,supportText,planText};
 })();

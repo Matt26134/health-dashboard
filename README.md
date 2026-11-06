@@ -1,20 +1,16 @@
-# Health & Performance Dashboard — v1.1.4
+# Health Dashboard 1.2.0
 
-Offline-first manual-tracking PWA hosted on GitHub Pages.
+Offline-first GitHub Pages PWA. Upload ALL files in this ZIP to the **root** of your existing health-dashboard repository. Do not uninstall the PWA, clear browser site data, create a new repo or reset the app. Your private data lives in the existing IndexedDB database in your browser profile.
 
-## Upgrade from any earlier v1.1.x (including v1.1.2)
-1. While still using the current installed app, export an **encrypted backup** and keep the password.
-2. Unzip this release and upload **all root files** to the existing GitHub repository. You **do not need** to install v1.1.3 first.
-3. Deploy, visit `https://matt26134.github.io/health-dashboard/?release=1.1.4` online, and restart the installed PWA.
-4. Check Settings shows v1.1.4, that three banked days remain, and that the nutrition, activity and photo data are intact. Do **not** uninstall the PWA, clear site data, or reset the local database.
+## Safe update
+1. Open the currently installed app and export a password-encrypted `.healthdash` backup from Settings; store it safely.
+2. Extract this ZIP. Upload/replace every file (including `experience-v120.js`, `index.html`, `styles.css`, `sw.js` and `version.json`) in the existing repository.
+3. Wait for GitHub Pages to deploy; open `https://matt26134.github.io/health-dashboard/?release=1.2.0` once while online, then restart the installed app.
+4. Verify Settings shows v1.2.0 and your previous weights, activity history, lessons, photos and banked reports are still present.
+5. Check the live calorie target and open Training; if stale, close all installed app tabs and revisit the URL online. Do not clear browser storage.
 
-All entries are stored locally by site origin in IndexedDB; uploading files to GitHub does not migrate or clear the database. The service-worker cache name changes to refresh application assets.
+## Scope and limitations
+Manual Garmin, Nutracheck and Withings input remains the primary workflow. Exercise credits are approximate; neither Garmin nor the app can accurately measure exact energy expenditure. New and legacy activity calorie types may be unclear. The 50% fraction is a configurable policy of this release, **not** a guaranteed medically appropriate intake. Banked days are never automatically reopened or re-scored. In-app reminders cannot reliably send notifications when the app is closed.
 
-### What changed
-- An actionable Day 4 plan (saved and recalled)
-- A personal, dynamically generated Close Today report without modifying the archived report
-- Actual bedtime target is visible and editable; actual bedtime confirmed in the morning
-- Today displays total fluids when entered
-- Includes the 1.1.3 decimal-input fix and all 1.1.2 activity-entry fixes
-
-Test report and remaining backlog are in BACKLOG.md and CHANGELOG.md.
+## Files
+Static JavaScript/CSS/HTML, curriculum, manifest, service worker and icons. There are no account credentials, medical records or personal photos bundled in the ZIP.

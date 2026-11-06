@@ -1,6 +1,6 @@
 {
-  "version": "1.1.4",
-  "name": "Day 4: Coaching & Closeout",
-  "released": "2026-11-04",
-  "notes": "Personalised banked-day reports, next-day support anchors, bedtime target visibility and combined fluid quick views. Includes v1.1.3 decimal hotfix."
+  "version": "1.2.0",
+  "name": "Daily Experience & Adaptive Fuelling",
+  "released": "2026-11-06",
+  "notes": "Rebuilt Today, shared exercise-adjusted calorie budget and precise status, motivation-first morning briefing, injury-aware coaching, non-destructive sleep tracking, redesigned nutrition input and mobile polish."
 }

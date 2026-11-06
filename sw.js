@@ -1,5 +1,5 @@
-const CACHE_NAME='health-dashboard-v1.1.4-coaching-closeout';
-const ASSETS=['./','./index.html','./styles.css','./db-v111.js','./curriculum-v111.js','./integrations-v111.js','./app-v114.js','./v1features-v114.js','./launch-v111.js','./coach-v114.js','./polish-v111.js','./polish-v112.js','./polish-v114.js','./manifest.webmanifest','./version.json','./app-icon-192.png','./app-icon-512.png'];
+const CACHE_NAME='health-dashboard-v1.2.0-daily-experience';
+const ASSETS=['./','./index.html','./styles.css','./db-v111.js','./curriculum-v111.js','./integrations-v111.js','./app-v114.js','./v1features-v114.js','./launch-v111.js','./coach-v114.js','./polish-v111.js','./polish-v112.js','./polish-v114.js','./experience-v120.js','./manifest.webmanifest','./version.json','./app-icon-192.png','./app-icon-512.png'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE_NAME).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('health-dashboard-')&&k!==CACHE_NAME).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',event=>{if(event.request.method!=='GET')return;const url=new URL(event.request.url);if(url.origin!==self.location.origin)return;event.respondWith(fetch(event.request).then(resp=>{if(resp&&resp.ok){const copy=resp.clone();caches.open(CACHE_NAME).then(c=>c.put(event.request,copy));}return resp;}).catch(()=>caches.match(event.request).then(r=>r||caches.match('./index.html'))));});

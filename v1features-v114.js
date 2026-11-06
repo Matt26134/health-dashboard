@@ -18,7 +18,7 @@
     walk:{Easy:3,Brisk:4.3,Long:3.8},
     other:{Other:5}
   };
-  const FUEL_BACK={run:{Easy:.50,Long:.60,Tempo:.60,Intervals:.60,Hills:.60,Race:.65,Recovery:.45},swim:.50,cycle:.50,gym:{Strength:.35,Cardio:.50,Mixed:.45},football:.50,walk:.25,other:.40,rest:0};
+  const FUEL_BACK={run:.50,swim:.50,cycle:.50,gym:.50,football:.50,walk:.50,other:.50,rest:0};
   const r25=n=>Math.round((Number(n)||0)/25)*25;
   const num=v=>v===''||v==null?null:Number(v);
   const activityLabel=s=>`${ACTIVITY_CONFIG[s.type]?.icon||'●'} ${s.subtype||ACTIVITY_CONFIG[s.type]?.label||s.type}`;
@@ -101,6 +101,7 @@
     form.onsubmit=async e=>{e.preventDefault();const f=new FormData(form),baseTarget=num(f.get('baseTarget'));if(!baseTarget){alert('Set a rest-day calorie target so the app can calculate today’s training adjustment.');return;}state.profile={...state.profile,calorieTarget:baseTarget,updatedAt:nowIso()};await HealthDB.put('profile',state.profile);const saved=await saveMorningPlan({weight:num(f.get('weight')),sleepHours:num(f.get('sleepHours')),nightToiletTrips:num(f.get('nightToiletTrips')),energy:f.get('energy'),hunger:f.get('hunger'),body:f.get('body'),mood:f.get('mood'),factors:f.getAll('factors'),injuryStatus:f.get('injuryStatus'),sessions:collectSessions(sessionsRoot),baseTarget,weeklyFocus:f.get('weeklyFocus'),note:f.get('note')});closeModal();await openDaySetSummary(saved);render();};
   }
   async function openDaySetSummary(plan){
+    if(window.HealthV12?.openMorningBriefing)return window.HealthV12.openMorningBriefing(plan);
     const b=await morningBriefingData();if(!b)return;
     modal(`<div class="modal-head"><div><h2>☀️ Morning briefing</h2><p>Your day is set. Here is what the inputs mean.</p></div><button class="close-btn" data-close-modal>×</button></div><section class="calorie-hero"><span>TODAY'S CALORIE TARGET</span><strong>${Number(plan.calorieTarget||0).toLocaleString()} kcal</strong><p>${Number(plan.baseCalorieTarget||0).toLocaleString()} base + ${Number(plan.trainingAdjustment||0).toLocaleString()} training adjustment.</p></section><div class="briefing-list">${b.notes.map(n=>`<section class="briefing-item"><div class="briefing-icon">${n.icon}</div><div><strong>${esc(n.title)}</strong><p>${esc(n.text)}</p></div></section>`).join('')}</div><section class="notice"><strong>Today's focus</strong><br>${esc(b.focus)}</section><button class="primary-btn wide" data-close-modal>Start my day</button>`);document.querySelectorAll('[data-close-modal]').forEach(x=>x.onclick=closeModal);
   }

@@ -1,17 +1,15 @@
-# Changelog
+# Health Dashboard v1.2.0 — Daily Experience & Adaptive Fuelling
 
-## v1.1.4 — Day 4: Coaching & Closeout (4 November 2026)
+## Major changes
+- Rebuilt Today to show the current date and journey day, a selective personal coach, live food budget, outstanding actions and an appropriately timed closeout. Recovery detail now lives in Training; Madrid progression remains in Progress.
+- One live exercise/food budget: 50% credit from completed Garmin exercise, plus only still-uncompleted planned-session credit. Explicit planned links win; same-type completed sessions replace planned estimates before unlinked extra activities are added. Edited or additional activity updates today's food target.
+- Separate calorie statuses (`within`, `1–100 over`, `101–300 over`, `>300 over`), with no punishment workouts. Unlogged nutrition remains unlogged. 5 Momentum points for honest logging plus 15 for being within target, preserving 100 total possible points.
+- Choose active vs total Garmin exercise calories; total receives an approximate resting-calorie deduction when duration and weight are recorded; uncertain older entries are clearly labelled.
+- One nutrition form and unified quick-entry route; decimal protein/fibre/fruit-and-vegetable portions retained exactly.
+- Morning briefing uses a short context-aware narrative and up to two useful observations, not mandatory field-by-field paragraphs. Saved support plan, hunger, sleep, banked days, weights, training and active injury status inform the message.
+- Morning check-in now asks how often sleep was interrupted, irrespective of cause, and preserves older separate bathroom-only records.
+- Training highlights exercise credit and the single active-injury recovery story. Resolved injuries stop affecting new advice.
+- Preserves banked reports, lessons, XP, photos, injuries, weight history, nutrition history and existing activity records. No migration, delete or reset operation added.
 
-- Rebuilt the **banked-day report view** into an evidence-aware coaching story using existing saved numbers and reflections. A 100/100 habit score does not imply feeling good. Old banked reports display with new presentation **without changing their records**.
-- Actual calories/target, protein/target, steps/target, strength/injury-safe activity and recent consecutive banked days appear where recorded. No hard-coded results. Contradictory or missing data is described honestly.
-- Tomorrow's support plan is now an actionable choice (satisfying meals, planned enjoyment, sleep, next ordinary decision), previewed and saved to the existing `support_<date>` setting that Day 4/5 coaching already reads. It is **not** a pointless preparation note and does not override tomorrow's morning exercise or calorie plan.
-- Checklist and next-easy-win show the **actual saved bedtime target** and link to an explanation/change screen. Bedtime isn't banked early from the Today action; morning confirmation remains the source for actual bedtime.
-- Today Quick Numbers shows **combined drinks** (water + other fluids), if those have been recorded, with clear provenance. The existing water / other-drinks inputs are unchanged. No historical hydration records are re-scored.
-- Existing v1.1.3 decimal entry hotfix, v1.1.2 precise H:M:S activity editor, trophy cabinet, injury module, and daily data are included intact.
-- No IndexedDB schema version increase, reset, import, automatic migration, or edit to banked days.
-
-## v1.1.3 — Decimal Entry Hotfix
-- Protein, fibre and fruit/vegetable portions accept fractional values and reopen unchanged.
-
-## v1.1.2 — Motivation & Resilience
-- Day 4/5 coaching and support plan, exact duration activity logging, trophies, injury and fluid tracking.
+## Test requirements
+Smoke-test 360 px Today/Training/Progress; current-day calorie reconciliation, planned matches, extra activity, double-counting, over-target logging and scoring, exact HH:MM:SS and decimal nutrition entry, morning waking persistence, closed-record immutability, and upgrade/cache flow. Export an encrypted backup before deploying.
