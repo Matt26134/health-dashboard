@@ -1,29 +1,34 @@
-# Health Dashboard — post-v1.2 backlog (6 November 2026)
+# Health Dashboard — status after v1.3.0 (9 November 2026)
 
-## Delivered in v1.2.0
-- Mobile Today redesign: date/day, selective contextual coach, live food budget, actionable checklist, expandable secondary detail, evening closeout last.
-- Single exercise-adjusted food budget: 50% of completed exercise energy; matched planned workouts replaced, extra sessions counted once; explicit vs inferred links explained in Training.
-- Distinct nutrition-log credit and calorie-target credit; higher-calorie days are described accurately without punishment advice.
-- One precise activity entry/editing route (h:m:s) and nutrition form supporting decimals; Garmin active/total/unknown flag for new/edited entries.
-- Injury-aware coaching: active restrictions from injury data, full recovery card in Training and no lingering injury messages once resolved.
-- Sleep field now counts all noticeable awakenings; legacy bathroom-trip entries preserved separately.
-- Daily report and next-day support-plan improvements from v1.1.4 retained.
-- Existing Progress/Madrid journey, achievements, education, photo comparisons, encrypted backup and reports retained.
+## Included and verified in this release
 
-## Monitor after real-device update
-- Check the app version, previous five days, banked reports, medals, photos, weigh-ins and activities; always export an encrypted backup before deployment.
-- Check exercise-calorie basis for historical Garmin recordings: older data may not label active vs total calories. No silent historical edits.
-- Check planned-vs-actual matching when two sessions share the same activity type; inferred links are approximate and can be improved with explicit matching.
-- Test bedtime confirmation after waking and correct later-day display, all Samsung keyboard types, and scrollable modal forms.
-- Monitor motivation language and over-target coaching for variety as more daily data accumulates.
+- 576 offline contextual coaching combinations, milestone-first priority and no repeating daily water-weight warning after the first week.
+- Day 8 weekly milestone and previous journey week always available on Progress (not replaced with an empty Monday score).
+- Weekly photo reminder with Front, Side, Back, Face view completion, two-day snooze and skip, without affecting Momentum.
+- Exact hours/minutes sleep entry, consistent with a separate count for all nighttime awakenings (bathroom-only legacy values untouched).
+- Explicit morning Rest / Recovery Day with zero planned activity credit.
+- Withings fat mass, muscle mass and optional bone mass in lb, automatic calculated fat percentage from recorded weight, initial four-week-context messaging.
+- Saved screen-time and social-media totals now displayed with weekly averages and a dedicated edit option.
+- Consolidated milestone hero on Today; standard coach still appears on other mornings.
+- All previous v1.2 features retained: 50% actual-exercise credit, live food target, distinct over/under status, no-Monday-reset coaching, active-injury record, body-weight trends, achievements, closeout, offline 174 lessons.
 
-## Future enhancements (not claimed as complete in v1.2.0)
-- Individual adaptive exercise-credit and calorie target calibration once weeks of data exist; avoid aggressive deficits if hunger/sleep/recovery worsen.
-- More substantial lesson exercises and evidence references; advanced photo comparisons and long-term plateau, sleep and habit trend insights.
-- Optional goal reset/maintenance mode and more nuanced injury rehab/rebuild plans.
-- Better proactive reminders: offline/open-app prompts only; closed-app push delivery would need separate infrastructure and consent.
-- Optional connected integrations (Garmin, Nutracheck, Withings) only after user chooses to enable them.
+## Long-term / needs more personal history
 
-## Data integrity
-- Do not reset the existing IndexedDB data, reinstall the app or clear site storage to deploy an upgrade.
-- Automatic recalculation is limited to the *current unbanked day*. Past reports stay closed and unchanged; details can be reviewed without reopening.
+- **Calorie calibration:** A validated estimate of maintenance energy requires several weeks of weight, energy-intake and exercise data; Garmin figures alone cannot make it exact. Review the 2 lb/week aspiration against ongoing hunger, sleep and training recovery.
+- **Plateau insights:** Trigger only with sufficient multi-week evidence; avoid confusing water fluctuations with fat loss or muscle loss.
+- **Body composition:** Broader 4–8-week charts and combined waist/photo/strength comparison after enough samples exist.
+- **Training forecasts:** More robust probability ranges for Ryde 10, Solent Half and Madrid once running resumes.
+- **Learning:** More illustrations, interactive knowledge checks, deeper references and optional review paths without changing completed lessons.
+- **Coaching preferences:** Optional 'More like this' / 'Not for me' ratings to bias future offline message selection; the present deterministic cycling already changes messages by date/context.
+- **Reminders:** Open-app prompts work offline. Reliable closed-app push notifications would require separate browser/platform permission and infrastructure.
+- **Maintenance mode:** A separate, explicit goal and coaching profile after the active weight-loss phase.
+- **Integrations:** Garmin, Withings and Nutracheck remain manual-only at the user's request; automatic connections are deferred.
+
+## Regression checklist for every future release
+
+1. Export the encrypted `.healthdash` backup on the device. Do not uninstall the PWA or clear storage.
+2. Verify old banked days, bodyweights, photos, records, injuries and lessons stay identical after update.
+3. Check every numeric form for decimals versus whole numbers; submit, save, reopen and verify actual values.
+4. Check current-day calorie budget, planned/actual activity links, target status and Momentum after editing.
+5. Confirm milestone only appears for a genuinely completed week; future photo prompt shows expected views and isn't repeated after completion.
+6. Test 360px-wide Samsung layout, offline service worker and version display.

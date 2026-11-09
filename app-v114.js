@@ -1,5 +1,5 @@
-const APP_VERSION='1.2.0';
-const RELEASE_NAME='Daily Experience & Adaptive Fuelling';
+const APP_VERSION='1.3.0';
+const RELEASE_NAME='Milestones & Motivation';
 const DEFAULT_START='2026-11-02';
 const MADRID_DATE='2027-04-25';
 const DEFAULTS={

@@ -1,15 +1,23 @@
-# Health Dashboard v1.2.0 — Daily Experience & Adaptive Fuelling
+# Health Dashboard v1.3.0 — Milestones & Motivation
+**Release date: 9 November 2026**
 
-## Major changes
-- Rebuilt Today to show the current date and journey day, a selective personal coach, live food budget, outstanding actions and an appropriately timed closeout. Recovery detail now lives in Training; Madrid progression remains in Progress.
-- One live exercise/food budget: 50% credit from completed Garmin exercise, plus only still-uncompleted planned-session credit. Explicit planned links win; same-type completed sessions replace planned estimates before unlinked extra activities are added. Edited or additional activity updates today's food target.
-- Separate calorie statuses (`within`, `1–100 over`, `101–300 over`, `>300 over`), with no punishment workouts. Unlogged nutrition remains unlogged. 5 Momentum points for honest logging plus 15 for being within target, preserving 100 total possible points.
-- Choose active vs total Garmin exercise calories; total receives an approximate resting-calorie deduction when duration and weight are recorded; uncertain older entries are clearly labelled.
-- One nutrition form and unified quick-entry route; decimal protein/fibre/fruit-and-vegetable portions retained exactly.
-- Morning briefing uses a short context-aware narrative and up to two useful observations, not mandatory field-by-field paragraphs. Saved support plan, hunger, sleep, banked days, weights, training and active injury status inform the message.
-- Morning check-in now asks how often sleep was interrupted, irrespective of cause, and preserves older separate bathroom-only records.
-- Training highlights exercise credit and the single active-injury recovery story. Resolved injuries stop affecting new advice.
-- Preserves banked reports, lessons, XP, photos, injuries, weight history, nutrition history and existing activity records. No migration, delete or reset operation added.
+## New in this release
 
-## Test requirements
-Smoke-test 360 px Today/Training/Progress; current-day calorie reconciliation, planned matches, extra activity, double-counting, over-target logging and scoring, exact HH:MM:SS and decimal nutrition entry, morning waking persistence, closed-record immutability, and upgrade/cache flow. Export an encrypted backup before deploying.
+- **Milestone-first motivation**: A full seven-day banked week takes priority over ordinary advice. The Day 8 experience recognises the first completed week and doesn't greet you with a generic daily slogan. Other week markers and five-pound weigh-in thresholds get contextual recognition. Celebrations require actual records; a calendar date alone does not earn one.
+- **576 offline coaching combinations**: 144 distinct, edited message pairs in 12 context-gated categories, each with four accompanying endings. Selection varies by day and context; identical ordinary message combinations don't repeat inside a 30-day run. Injury-related content is eligible only while the injury is active. No external AI call, subscription, or network requirement.
+- **Completed-week history**: The preceding journey week appears above the current week's progress in Progress, with older completed weeks available through an archive, showing banked days, recorded bodyweight change, training, lessons and nutrition logging. The new week's empty checklist doesn't replace the completed week's achievement.
+- **Weekly photo prompts**: From Day 8, then weekly, a prompt references the view categories actually recorded at baseline (Front / Side / Back / Face). It stays until the corresponding weekly shots are complete or you snooze/skip. Skipping never costs points. Existing photos remain local and unchanged.
+- **Exact sleep input**: Two whole-number fields (hours and minutes) replace decimal sleep entry in Morning Check-in; exact minutes are saved in `checkins.sleepDurationMinutes`, with the old `sleepHours` retained for existing analysis. Historical sleep entries are never guessed or rewritten.
+- **Explicit Rest / Recovery Day**: One-tap morning planning choice stores an actual rest session, removes unnecessary distance and time fields, and gives zero planned exercise calories. Any later completed activity still updates the live budget using v1.2 rules.
+- **Withings body composition in pounds**: Optional fat mass, muscle mass and bone mass can be entered alongside a morning weigh-in, from the regular weight form, or from Progress. The app calculates body-fat percentage from a recorded bodyweight when one exists; fat and muscle aren't inferred from each other. Trends are interpreted cautiously over at least several weeks.
+- **Screen time that produces an output**: Progress shows latest total screen time, seven-day average, social media average and last top app, with sample counts and appropriately cautious observations. The user can also edit the same daily check-in data using a dedicated form.
+- **Cohesive Today screen**: On weekly milestone mornings the special celebration takes the place of the normal coach card, avoiding a duplicate congratulatory message. Photo prompts are skippable and separate.
+- **Water-weight caution matured**: A daily lower weigh-in after the first week is celebrated without automatically repeating the early-fluid caveat. Actual weight-loss amounts and body-composition estimates remain distinct.
+
+## Inherited and retained from v1.2
+
+Adaptive 50% credit from *recorded active exercise calories* with matching to planned sessions, honest nutrition logging versus calorie-target success, separate training/recovery navigation, injury-aware coaching, closeout reports, saved next-day plans, correct nutrition decimals, exact exercise duration, encrypted backups, the 174-day lesson library, trophy cabinet, and Road to Madrid forecasts.
+
+## Data safety
+
+This version **does not change the IndexedDB schema version, delete any store, or rewrite old banked days**. All new observations use existing `checkins`, `measurements`, `settings`, `photos`, `activities` and `plans` stores, retaining earlier records. No test or demo data is included in the deployment ZIP.

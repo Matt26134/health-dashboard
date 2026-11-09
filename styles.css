@@ -264,3 +264,33 @@ html,body,.app-shell,.app-content{max-width:100%;min-width:0;overflow-x:clip}
 .v12-quick-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.v12-quick-grid button{min-width:0}
 .v12-brief-modal h2{font-size:1.5rem;margin:7px 0}.v12-brief-modal > p{line-height:1.6}.v12-brief-signal{background:#f3f5fa;padding:12px;border-radius:13px;margin:9px 0}.v12-brief-signal strong{font-size:.9rem}.v12-brief-signal p{font-size:.84rem;line-height:1.45;margin:4px 0 0}
 @media(max-width:380px){.v12-date h2{font-size:1.42rem}.v12-status{font-size:.66rem;padding:6px 8px}.v12-food-numbers strong{font-size:1.49rem}.v12-coach h2{font-size:1.26rem}.v12-task{padding:12px}.v12-date{gap:5px}}
+
+/* v1.3 — week milestones, photo invitations and useful secondary trends */
+.v13-overline{font-size:.72rem;color:#6c56c9;font-weight:850;letter-spacing:.055em;margin-bottom:7px}
+.v13-milestone,.v13-week-review{background:linear-gradient(135deg,#fffefa 0%,#f3f0fe 100%)!important;border:1px solid #d7cafa!important;padding:19px!important}
+.v13-milestone{margin-top:14px!important}
+.v13-milestone h3,.v13-week-review h3,.v13-photo-prompt h3{font-size:1.3rem;line-height:1.3;letter-spacing:-.02em;margin:0 0 8px;color:#212335}
+.v13-milestone p,.v13-week-review p,.v13-photo-prompt p{font-size:.88rem;color:#51586a;line-height:1.52;margin:4px 0 12px}
+.v13-photo-prompt{background:#fff!important;border:1px solid #cce3d7!important;padding:18px!important;margin-top:14px!important}
+.v13-tags{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0}.v13-tags span{padding:7px 9px;border-radius:10px;font-size:.78rem;font-weight:700;background:#f1f4fa;color:#4c5565}.v13-tags .v13-taken{background:#dff3e8;color:#117b50}
+.v13-actions{display:flex;gap:7px;flex-wrap:wrap;align-items:center}.v13-actions button{min-width:0}.v13-photo-prompt>small{font-size:.72rem;line-height:1.4;color:#727989;display:block;margin-top:10px}
+.v13-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0}
+.v13-grid>div{border-radius:13px;background:#f0f2f9;min-width:0;padding:12px}
+.v13-grid strong{display:block;font-size:1.4rem;line-height:1.22;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.v13-grid small{display:block;font-size:.72rem;line-height:1.3;color:#717789;margin-top:5px}
+.v13-footnote{font-size:.79rem;line-height:1.55;color:#606b78;margin:10px 0}
+.v13-body,.v13-screen{padding:17px!important}
+.v13-body .secondary-btn,.v13-screen .secondary-btn{margin-top:5px}
+.v13-sleep{padding:12px 13px;background:#f4f1ff;border:1px solid #e0d7fd;border-radius:15px;margin:10px 0 14px}
+.v13-sleep .modal-section-title{font-weight:800;color:#4f46b7;margin:0 0 5px}
+.v13-sleep p,.v13-composition-details p{font-size:.8rem;margin:3px 0 11px;line-height:1.45;color:#687180}
+.v13-sleep small,.v13-composition-details small{font-size:.75rem;color:#656f7e}
+.v13-composition-details{border:1px solid #e1e4eb;border-radius:13px;padding:11px 13px;background:#f8f9fc}
+.v13-composition-details summary{font-weight:800;color:#5143b8;cursor:pointer}
+.v13-composition-details .form-grid{margin:10px 0}
+.v13-rest{margin:0 0 8px!important;background:#ecf6ef!important;color:#207850!important;border-color:#c9e7d4!important}
+.v13-rest-help{display:block;margin:0 0 14px;color:#6c7380;font-size:.78rem}
+@media(max-width:380px){.v13-actions button{flex:1;min-width:44%;font-size:.8rem}.v13-grid strong{font-size:1.19rem}.v13-milestone h3,.v13-photo-prompt h3{font-size:1.16rem}}
+.v13-week-archive{padding:12px 16px!important;margin:8px 0 18px!important}
+.v13-week-archive summary{cursor:pointer;font-weight:800;color:#5646b9}
+.v13-week-archive>div{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}.v13-week-archive>div button{font-size:.78rem}
