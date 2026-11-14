@@ -1,5 +1,5 @@
-const APP_VERSION='1.3.0';
-const RELEASE_NAME='Milestones & Motivation';
+const APP_VERSION='1.4.0';
+const RELEASE_NAME='The Personal Coach';
 const DEFAULT_START='2026-11-02';
 const MADRID_DATE='2027-04-25';
 const DEFAULTS={

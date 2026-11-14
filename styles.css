@@ -294,3 +294,55 @@ html,body,.app-shell,.app-content{max-width:100%;min-width:0;overflow-x:clip}
 .v13-week-archive{padding:12px 16px!important;margin:8px 0 18px!important}
 .v13-week-archive summary{cursor:pointer;font-weight:800;color:#5646b9}
 .v13-week-archive>div{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}.v13-week-archive>div button{font-size:.78rem}
+
+/* v1.4 — responsive, deliberately concise personal-coach experience */
+.v14-overline{font-size:.72rem;font-weight:850;letter-spacing:.06em;color:#6b55c6;margin-bottom:7px}
+.v14-banked{display:block!important;padding:17px 18px!important;margin-top:14px!important;border-radius:18px!important;background:linear-gradient(135deg,#e5f7ef,#effaf4)!important;border-color:#a8d8c2!important}
+.v14-banked h3{font-size:1.15rem;letter-spacing:-.015em;line-height:1.3;margin:8px 0;color:#203c30}
+.v14-banked p{font-size:.89rem!important;line-height:1.52!important;color:#38594b!important}
+.v14-banked button{margin-top:13px}
+.v14-coach{border:1px solid #d8cff4!important;background:linear-gradient(140deg,#fff,#f7f5ff)!important;padding:20px!important}
+.v14-coach h2{font-size:1.35rem;margin:9px 0;line-height:1.23}
+.v14-coach>p{font-size:.93rem;line-height:1.55;color:#5b6071;margin:0 0 10px}
+.v14-observation{background:#f0f3fb;border-radius:14px;padding:12px 13px;margin:13px 0}
+.v14-observation strong,.v14-observation b{font-size:.85rem;color:#3d4266}.v14-observation p{font-size:.84rem;line-height:1.5;margin:6px 0 0}
+.v14-coach-foot{font-size:.77rem!important;color:#525f7a!important}
+.v14-history-actions,.v14-measurements,.v14-discoveries{padding:18px!important;margin:12px 0!important}
+.v14-history-actions h3,.v14-measurements h3,.v14-discoveries h3{font-size:1.14rem;line-height:1.3;margin:5px 0 9px}
+.v14-history-actions p,.v14-measurements>p,.v14-discoveries>p{font-size:.86rem;line-height:1.48;color:#626b7d;margin:3px 0 12px}
+.v14-history-actions .button-row,.v14-measurements .button-row{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.v14-history-actions .button-row button,.v14-measurements .button-row button{flex:1;min-width:135px;white-space:normal}
+.v14-mini-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:12px 0}
+.v14-mini-grid>div{background:#f2f4f9;border-radius:13px;padding:12px;min-width:0}
+.v14-mini-grid span{display:block;color:#6d7482;font-size:.72rem}.v14-mini-grid b{display:block;font-size:1.35rem;margin-top:4px}
+.v14-measurements>small,.v14-discoveries>small,.v14-small{display:block;color:#6d7583;font-size:.74rem;line-height:1.5;margin:8px 0}
+.v14-measurements #v14MeasureLater{display:block;margin:0 0 12px}
+.v14-discovery{padding:11px 0;border-bottom:1px solid #e8eaf1}.v14-discovery:last-of-type{border-bottom:0}.v14-discovery strong{font-size:.89rem}.v14-discovery p{font-size:.84rem;line-height:1.5;color:#576070;margin:5px 0}.v14-discovery small{font-size:.73rem;color:#7b8391}
+.v14-history{display:flex;flex-direction:column;gap:5px;margin:12px 0}
+.v14-history-row{display:flex;gap:10px;align-items:center;text-align:left;width:100%;padding:13px;border:1px solid #e1e5ed;border-radius:13px;background:#f8f9fc;color:#262b36;cursor:pointer}
+.v14-history-row>span:first-child{min-width:0;flex:1}.v14-history-row b,.v14-photo-item b{display:block;font-size:.9rem}.v14-history-row small,.v14-photo-item small{display:block;margin-top:3px;color:#737c8e;font-size:.73rem;overflow-wrap:anywhere}
+.v14-history-row strong{font-size:1.08rem;font-variant-numeric:tabular-nums}
+.v14-photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0}
+.v14-photo-item{display:flex;flex-direction:column;align-items:stretch;gap:5px;border:1px solid #e3e5ec;border-radius:13px;padding:8px;background:#f7f8fb;color:#303540;text-align:left;cursor:pointer;min-width:0}
+.v14-photo-item img{width:100%;height:165px;object-fit:cover;border-radius:9px;background:#e9ebf2}
+.v14-photo-item>span:last-child{text-align:right;font-size:.82rem;color:#6760c7}.v14-photo-preview{max-width:100%;max-height:45vh;display:block;object-fit:contain;margin:8px auto 14px;border-radius:13px}
+.v14-pref-line{display:flex;gap:11px;align-items:flex-start;background:#f5f6fa;border:1px solid #e2e4ed;border-radius:13px;padding:12px}
+.v14-pref-line input{margin-top:4px;accent-color:#6b50d8}.v14-pref-line b{display:block}.v14-pref-line small{display:block;margin-top:3px;font-size:.74rem;color:#788091}
+.v14-lesson-hero{background:linear-gradient(145deg,#eff1fc,#eef8f4);padding:17px;border-radius:16px;margin:12px 0 17px}
+.v14-lesson-hero p{font-size:1.02rem;line-height:1.48;font-weight:650;margin:0;color:#323449}
+.v14-lesson-challenge h3{font-size:1.07rem;line-height:1.45;margin:8px 0 12px}
+.v14-lesson-choices{display:flex;flex-direction:column;gap:9px}
+.v14-choice{display:flex;gap:11px;align-items:center;width:100%;padding:13px;border:1px solid #dfe1e9;border-radius:13px;background:#f7f8fb;text-align:left;color:#333a48;line-height:1.4;cursor:pointer;font-size:.88rem}
+.v14-choice span{display:grid;place-items:center;flex:none;width:28px;height:28px;border-radius:9px;background:#e8e5f7;color:#624ec5;font-weight:850}
+.v14-choice.selected{border-color:#7056dd;background:#f1edff;box-shadow:inset 0 0 0 1px #7056dd}
+.v14-lesson-result{border-radius:13px;border:1px solid #c1dccd;background:#edf8f1;padding:12px;margin-top:12px}
+.v14-lesson-result p{font-size:.84rem;margin:5px 0;line-height:1.5}
+.v14-lesson-evidence{margin:16px 0;padding:13px;background:#f4f5f8;border-radius:13px;border:1px solid #e3e5ea}
+.v14-lesson-evidence summary{font-size:.86rem;font-weight:750;color:#5546a7;cursor:pointer}
+.v14-lesson-evidence h4{font-size:.87rem;margin:14px 0 6px}.v14-lesson-evidence p{font-size:.82rem;line-height:1.55;color:#505b6a}
+.v14-lesson-apply{margin:14px 0}.v14-lesson-apply h3{font-size:1.03rem}.v14-lesson-apply p{font-size:.88rem;line-height:1.5}
+.v14-apply-choices{display:flex;flex-direction:column;gap:8px;margin:12px 0}
+.v14-apply-choices label{display:flex;gap:8px;align-items:center;background:#f3f4fa;border-radius:10px;padding:10px;font-size:.86rem}
+.v14-apply-choices input{accent-color:#6950d8}
+#v14LessonNote{width:100%;box-sizing:border-box;margin:6px 0 13px}
+@media(max-width:380px){.v14-history-actions .button-row button,.v14-measurements .button-row button{min-width:100%}.v14-banked h3{font-size:1.06rem}.v14-photo-item img{height:125px}}

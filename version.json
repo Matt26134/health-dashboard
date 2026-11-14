@@ -1,6 +1,6 @@
 {
-  "version": "1.3.0",
-  "name": "Milestones & Motivation",
-  "released": "2026-11-09",
-  "notes": "576 offline contextual coaching variants, milestone-first messages, preserved previous-week reviews, weekly photo prompts, exact sleep hours/minutes, rest-day quick choice, Withings body composition in lb, and digital-balance trends."
+  "version": "1.4.0",
+  "name": "The Personal Coach",
+  "released": "2026-11-13",
+  "notes": "Contextual banked-day coaching; applied interactive lessons; weight and photo history editing; Monday 16 Nov circumference tracking; cautious early forecasts; locally computed discovery summaries."
 }

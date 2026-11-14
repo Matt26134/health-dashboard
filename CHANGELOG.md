@@ -1,3 +1,26 @@
+# Health Dashboard v1.4.0 — The Personal Coach
+**Release date: 13 November 2026**
+
+## Additions
+- **More personal Today and banked-day coaching:** Summarises relevant daily achievements, history and context; drops the previous morning's coaching once the day has been banked; fixes the displayed banked-day count. Saved reports remain unchanged.
+- **Evidence-based weekly discoveries:** Draws cautiously from past check-ins, activities, sleep, hunger and screen/bedtime measurements, showing achievements, patterns with minimum sample sizes and a small optional experiment.
+- **Historical weigh-in viewer and correction:** Preserves original IDs, sources and existing banked reports when a user explicitly corrects a saved date/weight/note. No background recalculation of past reports.
+- **Photo management:** Edit saved photo category (Front, Side, Back, Face, Other), date and notes without replacing stored images; retained the existing paired-photo comparison.
+- **Weekly measurements in inches:** Available from **Monday 16 November 2026**, with waist, stomach, hips, chest, neck and thigh, plus optional upper arm. Individual history, corrections and optional reminder snoozing. Uses the existing measurements store.
+- **More applied learning:** Choice-based challenges with varied answer positions, useful explanations, optional expanded original evidence and short self-reflection. Existing 174 lesson records and completions retained.
+- **Early forecast guard:** Withholds extrapolated Madrid goal dates until at least 28 days of history and 21 distinct weighing days.
+
+## Fixes and boundaries
+- Prevented irrelevant generic 'One higher-calorie day...' report notices when calories were within target; differentiated short recorded sleep from selecting fatigue as a challenge.
+- Removed the 'You flagged as challenges' malformed copy when 'Nothing significant' was chosen.
+- Preserved v1.3 adaptive calorie rules, injury management, lessons, trophies, body composition, photos, reports and backup implementation.
+- No DB schema change: `HealthDashboardDB` remains **version 5 with 17 stores**. There is no automatic data migration or reset.
+
+## Verification
+All JS syntax checks and synthetic mobile DOM functional checks passed; browser/PWA storage and service-worker deployment still require real-device validation. See `TESTING.md`.
+
+---
+
 # Health Dashboard v1.3.0 — Milestones & Motivation
 **Release date: 9 November 2026**
 
